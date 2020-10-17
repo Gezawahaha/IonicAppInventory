@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AlertController, IonItemSliding } from '@ionic/angular';
-import { url } from 'inspector';
 import { AppService } from '../app.service';
 import { Product } from '../products.model';
 
