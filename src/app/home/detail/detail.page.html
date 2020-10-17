@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="4" offset-sm="4" ng-reflect-size="12">
+        <ion-card>
+          <img [src]="products.foto">
+          <ion-card-header>
+            <h2>Brand : {{products.merek}}</h2>
+            <h2>{{products.model}}</h2>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-label>
+              <p>Rp. {{products.harga}}</p>
+              <p>Tersedia: {{products.stok}}</p>
+              <br>
+            </ion-label>
+            <ion-label *ngIf="products.tipe === 'CPU'">
+              <h3>Detail :</h3>
+              <p>Base Clock : {{products.baseClock}} GHz</p>
+              <p>Boost Clock : {{products.boostClock}} GHz</p>
+              <p>Core : {{products.core}} Cores</p>
+              <p>Thread : {{products.thread}} Threads</p>
+              <br>
+              <p>note:</p>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur earum odit facilis harum iusto nam soluta, a tempora magni adipisci ducimus suscipit voluptatum quas ab accusantium quisquam! Ipsam corrupti aliquid sit iste, voluptate quisquam ea dolorum, accusamus sequi a doloremque?</p>
+            </ion-label>
+            <ion-label *ngIf="products.tipe === 'RAM'">
+              <h3>Detail :</h3>
+              <p>Size : {{products.size}} GB</p>
+              <p>Speed : {{products.speed}} MHz</p>
+              <br>
+              <p>note:</p>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur earum odit facilis harum iusto nam soluta, a tempora magni adipisci ducimus suscipit voluptatum quas ab accusantium quisquam! Ipsam corrupti aliquid sit iste, voluptate quisquam ea dolorum, accusamus sequi a doloremque?</p>
+
+            </ion-label>
+            <ion-label *ngIf="products.tipe === 'VGA'">
+              <h3>Detail :</h3>
+              <p>Chipset : {{products.chipset}}</p>
+              <p>Prosesor : {{products.prosesor}}</p>
+              <p>Base Clock : {{products.baseClock}} GHz</p>
+              <p>Boost Clock : {{products.boostClock}} GHz</p>
+              <br>
+              <p>note:</p>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur earum odit facilis harum iusto nam soluta, a tempora magni adipisci ducimus suscipit voluptatum quas ab accusantium quisquam! Ipsam corrupti aliquid sit iste, voluptate quisquam ea dolorum, accusamus sequi a doloremque?</p>
+
+            </ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- <ion-list [routerLink]="['./', products.id]" *ngIf="products.stok != '0'"  >
+    <ion-item >
+      <ion-thumbnail slot="start">
+        <img [src]="products.foto">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ products.tipe }} {{ products.merek }} {{products.model}}</h2>
+        <h6> stock:{{ products.stok }}</h6>
+        <h3>Rp. {{products.harga}}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list> -->
+
+
+</ion-content>

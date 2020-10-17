@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Create New Item</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form #form="ngForm">
+    <ion-item>
+      <ion-label position="floating">Jenis Barang</ion-label>
+      <ion-select name="type" [(ngModel)]="tipe" interface="popover">
+        <ion-select-option value="CPU">CPU</ion-select-option>
+        <ion-select-option value="RAM">RAM</ion-select-option>
+        <ion-select-option value="MB">Motherboard</ion-select-option>
+        <ion-select-option value="VGA">VGA</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Foto</ion-label>
+      <ion-input type="text" ngModel name="foto" placeholder="Masukan link gambar" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Merek</ion-label>
+      <ion-input type="text" ngModel name="merek" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Model</ion-label>
+      <ion-input type="text" ngModel name="model" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Harga</ion-label>
+      <ion-input type="number" ngModel name="harga" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Stok</ion-label>
+      <ion-input type="number" ngModel name="stok" required></ion-input>
+    </ion-item>
+    
+
+    <ion-item *ngIf="tipe==='CPU'">
+      <ion-label position="floating">Base Clock</ion-label>
+      <ion-input type="number" ngModel name="baseClock"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="tipe==='CPU'">
+      <ion-label position="floating">Boost Clock</ion-label>
+      <ion-input type="number" ngModel name="boostClock"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="tipe==='CPU'">
+      <ion-label position="floating">Core</ion-label>
+      <ion-input type="number" ngModel name="core"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="tipe==='CPU'">
+      <ion-label position="floating">Thread</ion-label>
+      <ion-input type="number" ngModel name="thread"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="tipe==='VGA'">
+      <ion-label position="floating">Base Clock</ion-label>
+      <ion-input type="number" ngModel name="baseClock"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="tipe==='VGA'">
+      <ion-label position="floating">Boost Clock</ion-label>
+      <ion-input type="number" ngModel name="boostClock"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="tipe==='VGA'">
+      <ion-label position="floating">Core</ion-label>
+      <ion-input type="number" ngModel name="core"></ion-input>
+    </ion-item>
+    
+    <ion-item *ngIf="tipe==='RAM'">
+      <ion-label position="floating">Size</ion-label>
+      <ion-input type="number" ngModel name="size"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="type==='RAM'">
+      <ion-label position="floating">Speed</ion-label>
+      <ion-input type="number" ngModel name="speed"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="type==='MB'">
+      <ion-label position="floating">Chipset</ion-label>
+      <ion-input type="number" ngModel name="chipset"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="type==='MB'">
+      <ion-label position="floating">Compatible (seperate with coma)</ion-label>
+      <ion-input type="number" ngModel name="compatible"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" (click)="onSubmit(form)">Add Item</ion-button>
+  </form>
+</ion-content>

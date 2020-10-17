@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+
+    <ion-buttons slot="primary">
+      <ion-button (click)="onDisplayModeChange(1)" *ngIf="displayMode===2">
+        <ion-icon name="grid-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button (click)="onDisplayModeChange(2)" *ngIf="displayMode===1">
+        <ion-icon name="list-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-searchbar></ion-searchbar>
+  <ion-item lines="full">
+    <ion-label>Select Search Type</ion-label>
+
+  </ion-item> -->
+
+  <!-- <ion-list>
+    <ion-item *ngFor="let p of products">
+      <ion-thumbnail slot="start">
+        <img [src]="p.foto">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ p.tipe }} {{ p.merek }} {{ p.model}}</h2>
+        <h6> stock:{{ p.stok }}</h6>
+        <h3>Rp. {{ p.harga}}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list> -->
+
+
+  <div *ngIf="displayMode===1">
+    <app-list-view *ngFor="let product of products" [products]='product'></app-list-view>
+  </div>
+
+  <div *ngIf="displayMode===2">
+    <ion-grid>
+      <ion-row>
+        <ng-container *ngFor="let product of products">
+          <ion-col *ngIf="product.stok != '0' " size="6" size-md="4" size-lg="3" [routerLink]="['./', product.id]">
+            <app-grid-view [products]='product'></app-grid-view>
+          </ion-col>
+        </ng-container>
+      </ion-row>
+    </ion-grid>  
+  </div>
+
+
+  
+
+
+  
+</ion-content>

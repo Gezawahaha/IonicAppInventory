@@ -1,0 +1,12 @@
+<ion-list [routerLink]="['./', products.id]" *ngIf="products.stok != '0'" >
+  <ion-item >
+    <ion-thumbnail slot="start">
+      <img [src]="products.foto">
+    </ion-thumbnail>
+    <ion-label>
+      <h2>{{ products.tipe }} {{ products.merek }} {{products.model}}</h2>
+      <h6> stock:{{ products.stok }}</h6>
+      <h3>Rp. {{products.harga}}</h3>
+    </ion-label>
+  </ion-item>
+</ion-list>

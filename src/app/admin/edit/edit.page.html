@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Item</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="4" offset-sm="4" ng-reflect-size="12">
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">imageUrl</ion-label>
+            <ion-input [(ngModel)]="newfoto" value="{{loadedProducts.foto}}"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position ="floating">Merek</ion-label>
+            <ion-input [(ngModel)]="newMerek" value="{{loadedProducts.merek}}"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Model</ion-label>
+            <ion-input [(ngModel)]="newModel" value="{{loadedProducts.model}}"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Price</ion-label>
+            <ion-input type="number" [(ngModel)]="newHarga" value="{{loadedProducts.harga}}"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Stock</ion-label>
+            <ion-input type="number" [(ngModel)]="newStok" value="{{loadedProducts.stok}}"></ion-input>
+          </ion-item>
+      
+          <ion-item *ngIf="loadedProducts.type === 'CPU' ">
+            <ion-label position="floating">Base Clock</ion-label>
+            <ion-input type="number" [(ngModel)]="newBaseClock" value="{{loadedProducts.baseClock}}"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="loadedProducts.type === 'CPU' ">
+            <ion-label position="floating">Boost Clock</ion-label>
+            <ion-input type="number" [(ngModel)]="newBoostClock" value="{{loadedProducts.boostClock}}"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="loadedProducts.type === 'CPU' ">
+            <ion-label position="floating">Core</ion-label>
+            <ion-input type="number" [(ngModel)]="newCore" value="{loadedProducts.core}}"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="loadedProducts.type === 'CPU' ">
+            <ion-label position="floating">Thread</ion-label>
+            <ion-input type="number" [(ngModel)]="newThread" value="{{loadedProducts.thread}}"></ion-input>
+          </ion-item>
+      
+         
+          <ion-item *ngIf="loadedProducts.type === 'VGA' ">
+            <ion-label position="floating">Chipset</ion-label>
+            <ion-input [(ngModel)]="newChipset" value="{{loadedProducts.chipset}}"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="loadedProducts.type === 'VGA' ">
+            <ion-label position="floating">Base Clock</ion-label>
+            <ion-input type="number" [(ngModel)]="newBaseClock" value="{{loadedProducts.baseClock}}"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="loadedProducts.type === 'VGA' ">
+            <ion-label position="floating">Boost Clock</ion-label>
+            <ion-input type="number" [(ngModel)]="newBoostClock" value="{{loadedProducts.boostClock}}"></ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-button expand="full" (click)="alertEdit()">Submit</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

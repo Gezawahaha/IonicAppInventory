@@ -1,0 +1,11 @@
+<ion-card color="secondary" >
+  <ion-card-header>
+    <img  [src]="products.foto">
+    
+    <ion-card-title>{{ products.tipe }} {{ products.merek }} {{ products.model}}</ion-card-title>
+    <ion-card-subtitle>Rp. {{ products.harga}}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    stock:{{ products.stok }}
+  </ion-card-content>
+</ion-card>
